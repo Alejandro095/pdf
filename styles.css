@@ -1,0 +1,332 @@
+*, *::after, *::before {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-family: sans-serif;
+}
+
+body {
+    margin: 1rem 0;
+}
+
+.pdf {
+    /* Aspect ratio 1.414 */
+    width: 1080px;
+    height: 1527.12px;
+
+    position: relative;
+    display: flex;
+
+    /* Borrar */
+    /* border: 1px solid black; */
+    margin: 0 auto;
+}
+
+.pdf .page-information {
+    width: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    font-weight: 600;
+    color: white;
+}
+
+.pdf .reverse {
+    left: initial;
+    right: 0;
+}
+
+.pdf .page-information .top {
+    padding: 1.5rem 0;
+}
+
+.pdf .page-information .bottom {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 1.5rem 0;
+}
+
+.pdf .page-information .bottom span:first-child {
+    transform: rotate(270deg);
+    position: relative;
+    top: 100px;
+}
+
+.pdf .reverse .bottom span:first-child {
+    transform: rotate(90deg);
+    position: relative; 
+    top: 100px;
+}
+
+.pdf .page-content {
+    width: 100%;
+    flex: 1;
+ 
+    margin: 2rem 0;
+
+    display: flex;
+    justify-content: center;
+}
+
+.pdf .page-content  .container {
+    width: 86%;
+
+    padding: 1.75rem;
+
+    display: grid;
+    grid-template-columns: 1.25fr 3fr 1fr;
+    grid-template-rows: 150px 1fr;
+    font-weight: 700;
+
+    grid-template-areas:"header header asideTwo"
+                        "asideOne content asideTwo"
+}
+
+.pdf p, .pdf ul {
+    font-weight: 400;
+}
+
+.pdf .page-content  .header {
+    grid-area: header;
+    border-bottom: 2px solid #B9B7B8;
+
+    display: flex;
+    align-items: flex-end;
+
+    font-size: 1.5rem;
+    padding: 0 2rem 1rem 0;
+}
+
+.pdf .page-content  .asideOne {
+    grid-area: asideOne;
+    border-right: 2px solid #B9B7B8;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf .page-content .asideOne > div {
+    padding-top: 1rem;
+    padding-right: 1rem;
+    font-size: 1rem;
+}
+
+.pdf .page-content img {
+    width: 60px;
+}
+
+.pdf .page-content .asideOne span + div  {
+    display: flex;
+}
+
+.pdf .page-content .asideOne ul {
+    list-style: none;
+}
+
+.pdf .page-content .asideOne li {
+    font-weight: 500;
+    padding-left: 0.25rem;
+}
+
+.pdf .page-content .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pdf .image img {
+    width: 150px;
+}
+
+.pdf .asideOne > div:first-child {
+    flex: 1;
+}
+
+.pdf .asideOne > div:not(:first-child) {
+    flex-basis: 200px;
+    font-size: 0.85rem;
+}
+
+.pdf .aside > div:not(:last-child) {
+    border-bottom: 2px solid #B9B7B8;
+}
+
+.pdf .asideTwo {
+    grid-area: asideTwo;
+    border-left: 2px solid #B9B7B8;
+}
+
+.pdf .content {
+    grid-area: content;
+    display: flex;
+    flex-direction: column;
+}
+
+.pdf .content > div {
+    padding: 1rem 2rem;
+}
+
+.pdf .content > div:last-child {
+    border-top: 2px solid #B9B7B8; 
+}
+
+.pdf .content > div > .title {
+    position: relative;
+    right: 15px;
+}
+
+.pdf .content .pratices > div {
+    height: 100%;
+}
+
+.pdf .page-content .elements {
+    flex: 1;
+    display: flex;
+    padding: 0;
+}
+
+.pdf .elements > div {
+    padding: 1rem;
+}
+
+.pdf .elements > div {
+    flex: 1;
+}
+
+.pdf .elements > div:nth-child(even) {
+    background-color: #E6E7E9;
+}
+
+.pdf .content .pratices > div:last-child {
+    background-color: #B9B7B8;
+}
+
+.pdf .elements > div ul {
+    list-style: square inside;
+}
+
+.pdf .elements > div ul li > ul {
+    list-style: circle inside;
+    padding-left: 1rem;
+}
+
+.pdf .page-content .view-2 {
+    display: initial;
+    width: 85%;
+}
+.pdf .page-content .view-2 .content-page {
+    height: 100%;
+}
+
+.pdf .page-content .view-2 .elements {
+    height: 100%;
+}
+
+.remove-list-style {
+    list-style: none;
+}
+
+.asideTwo > div {
+    padding-left: 1.5rem;
+}
+
+.pdf .asideTwo > div:first-child > div:first-child {
+    background-color: #4CB848;
+    padding: 1.25rem 1rem;
+    font-size: 1.5rem;
+    color: white;
+    text-align: center;
+    margin-bottom: 1.25rem;
+}
+
+.pdf .asideTwo > div:last-child > div {
+    margin-top: 1rem;
+}
+
+.pdf .asideTwo span {
+    font-size: 0.85rem;
+    font-weight: 700;
+}
+
+.pdf .asideTwo {
+    display: flex;
+    flex-direction: column;
+}
+.pdf .asideTwo > div:first-child {
+    flex: 1;
+}
+.pdf .asideTwo > div:last-child {
+    flex: 1;
+}
+
+/* Types */
+.pdf .title {
+    color: #F25922;
+}
+
+
+/* Themes */
+
+.pdf .reinsercion-social {
+    color: #802990;
+}
+.reinsercion-social .header {
+    color: #802990;
+}
+.reinsercion-social .page-information .bottom {
+    background-color: #802990;
+}
+.reinsercion-social .page-content .container {
+    border-top: 2px solid #802990;
+    border-bottom: 2px solid #802990;
+}
+.reinsercion-social .asideTwo > div:first-child > div:first-child {
+    background-color: #802990;
+}
+
+
+.pdf .justicia {
+    color: #0095D9;
+}
+.justicia .header {
+    color: #0095D9;
+}
+.justicia .page-information .bottom {
+    background-color: #0095D9;
+}
+.justicia .page-content .container {
+    border-top: 2px solid #0095D9;
+    border-bottom: 2px solid #0095D9;
+}
+.justicia .asideTwo > div:first-child > div:first-child {
+    background-color: #0095D9;
+}
+
+
+.pdf .gobernabilidad {
+    color: #4CB848;
+}
+.gobernabilidad .header {
+    color: #4CB848;
+}
+.gobernabilidad .page-information .bottom {
+    background-color: #4CB848;
+}
+.gobernabilidad .page-content .container {
+    border-top: 2px solid #4CB848;
+    border-bottom: 2px solid #4CB848;
+}
+.gobernabilidad .asideTwo > div:first-child > div:first-child {
+    background-color: #4CB848;
+}
